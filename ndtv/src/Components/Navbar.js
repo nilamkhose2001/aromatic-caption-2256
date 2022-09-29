@@ -1,13 +1,17 @@
+import { useState } from "react"
 import {Flex,Box,Image,Text, Input} from "@chakra-ui/react"
 import {Link} from "react-router-dom"
 import styles  from "./Navbar.module.css"
-export default function Navbar()
+export default function Navbar({handleChange})
 {
     
+   const [text,setText]=useState("")
    
    
-   
-    
+    const handleClick=()=>{
+        handleChange(text)
+        setText("")
+    }
     return <>
      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css"></link>
     <Flex className={styles.outerFlex}>
@@ -41,7 +45,7 @@ export default function Navbar()
 <Link  to="/">
 <Text className={styles.upper} >CRICKET</Text>
     </Link>
-    <Link  to="/">
+    <Link  to="/india">
     <Text className={styles.lower}> INDIA</Text>
     </Link>
 </Box>
@@ -132,8 +136,8 @@ export default function Navbar()
         <Text className={styles.upper} > ART</Text>
     </Link>
     <Box  display="flex" alignItems="center" p="1px">
-        <Input  placeholder="Search" mr="5px"/>
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <Input size='xs' placeholder="Search" mr="5px" type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
+        <i onClick={handleClick} class="fa-solid fa-magnifying-glass"></i>
     </Box>
  
     
