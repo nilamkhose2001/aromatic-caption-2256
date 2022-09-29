@@ -1,0 +1,31 @@
+
+.carts{
+   
+    background-color: #EAEAEA;
+    margin-bottom: 2%;
+    padding:2%
+}
+
+.Box{
+    
+   border-radius: 5px;
+   background-color: white;
+   padding: 0px;
+   padding:0% 2%
+}
+h2{
+    text-align: left;
+    font-weight: bold;
+    margin-top: 30px;
+}
+/* body{
+    background-color: #EAEAEA;
+} */
+
+@media all and (min-width:320px) and (max-width:764px){
+.story{
+    display:flex;
+    flex-direction: column;
+    padding: 2%;
+}
+}
