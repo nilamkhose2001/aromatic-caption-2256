@@ -13,10 +13,13 @@
    padding: 0px;
    padding:0% 2%
 }
-h2{
+.head{
     text-align: left;
-    font-weight: bold;
-    margin-top: 30px;
+    font-weight: bolder;
+   padding-left: 1%;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+
 }
 /* body{
     background-color: #EAEAEA;

@@ -11,9 +11,10 @@ const getData=(q="us")=>{
 }
 export default function Home(){
 const [loading,setLoading]=useState(false)
-const [text,setText]=useState("us")
+const [text,setText]=useState("in")
 const [data,setData]=useState([])
 const [story,setStory]=useState([])
+const [nav,setNav]=useState(false)
 const {handleNews}=useContext(AppContext)
 //console.log(handleNews)
 
@@ -38,27 +39,38 @@ const handleClick=(el)=>
 {
     handleNews(el)
     console.log("nilam")
+    setNav(true)
+   
+   
+}
+if(nav)
+{
     return <>
     <Navigate to="/india" />
     </> 
-   
 }
     return <>
      <Navbar handleChange={handleChange}/>
-
-    { loading?<Heading textAlign="center">Loading...</Heading>:<Flex className={styles.story} gap='2' mt="20px" backgroundColor="#EAEAEA">
+        {
+            loading?"":<h2 className={styles.head}>Headlines</h2>
+        }
+    { loading?<Heading textAlign="center">Loading...</Heading>:<Flex p="1%" className={styles.story} gap='2' mt="2px" backgroundColor="#EAEAEA">
         {
            
             story?.map(el=>{
-                return <Box onClick={()=>handleClick(el)} backgroundColor="white">
+                return <Box onClick={()=>handleClick(el)} backgroundColor="white" key={el.title}>
                     <Image height="50%" width="100%" borderRadius="5px 5px 0px 0px" src={el.urlToImage} alt={el.title} />
                     
 
-                    <Heading as='h5' size='sm'>{el.title}</Heading>
+                    {/* <Heading as='h6' size='sm'>{el.title}</Heading> */}
+                <Text fontSize="14px" fontFamily="Roboto, sans-serif" fontWeight="700" lineHeight="22px">{el.title}</Text>
                 </Box>
             })
         }
 </Flex>}
+{
+            loading?"":<h2 className={styles.head}>Big Story</h2>
+        }
 { loading?<Heading textAlign="center"></Heading>:<SimpleGrid className={styles.carts} columns={{ base: 1, sm: 1, md: 2, lg: 3}} spacing='10px'>
         {
             data?.map(el=>{
@@ -74,21 +86,23 @@ const handleClick=(el)=>
   
 </SimpleGrid>}
 
-
-{ loading?<Heading textAlign="center"></Heading>:<Flex className={styles.story} gap='2' mt="20px" backgroundColor="#EAEAEA">
+{
+            loading?"":<h2 className={styles.head}>Story</h2>
+        }
+{ loading?<Heading textAlign="center"></Heading>:<Flex p="1%" className={styles.story} gap='2' mt="1px" backgroundColor="#EAEAEA">
         {
            
             story?.map(el=>{
-                return <Box onClick={()=>handleClick(el)} backgroundColor="white">
+                return <Box onClick={()=>handleClick(el)} backgroundColor="white" key={el.title}>
                     <Image height="50%" width="100%" borderRadius="5px 5px 0px 0px" src={el.urlToImage} alt={el.title} />
                     
 
-                    <Heading as='h5' size='sm'>{el.title}</Heading>
+                    <Text fontSize="14px" fontFamily="Roboto, sans-serif" fontWeight="700" lineHeight="22px">{el.title}</Text>
                 </Box>
             })
         }
 </Flex>}
-<Footer />
+<Footer handleChange={handleChange} />
     </>
 }
 

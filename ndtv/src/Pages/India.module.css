@@ -1,0 +1,35 @@
+body{
+    background-color: #EAEAEA;
+}
+.f1{
+    width:30%;
+}
+.f2{
+    width: 20%;
+}
+.img{
+    width: 50%;
+}
+@media all and (min-width:765px) and (max-width:1070px){
+    .flex{
+        flex-direction: column;
+       }
+       .f1{
+        width: 80%;
+       }
+       .f2{
+        width: 80%;
+       }
+}
+
+@media all and (min-width:320px) and (max-width:764px){
+    .flex{
+        flex-direction: column;
+       }
+       .f1{
+        width: 80%;
+       }
+       .f2{
+        width: 80%;
+       }
+}
