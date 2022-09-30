@@ -1,17 +1,12 @@
-import { useState } from "react"
-import {Flex,Box,Image,Text, Input,Menu,MenuItem,Button,MenuList,MenuButton} from "@chakra-ui/react"
+
+import {Flex,Box,Image,Text,Menu,MenuItem,Button,MenuList,MenuButton} from "@chakra-ui/react"
 import {Link} from "react-router-dom"
-import styles  from "./Navbar.module.css"
+import styles  from "./NewsNavbar.module.css"
+
 export default function Navbar({handleChange})
 {
     
-   const [text,setText]=useState("")
    
-   
-    const handleClick=()=>{
-        handleChange(text)
-        setText("")
-    }
     return <>
      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css"></link>
     <Flex className={styles.outerFlex}>
@@ -127,21 +122,13 @@ export default function Navbar({handleChange})
 <Text className={styles.upper} >SHOPPING</Text>
     </Link>
     <Link to="/">
-    <i class="fa-brands fa-twitter" style={{color:"white"}}></i>
+    <i class="fa-brands fa-twitter" color=""></i>
     </Link>
 </Box>
-<Box className={`${styles.innerBoxStyles} ${styles.inp}`}  >
 
-    <Link to="/">
-        <Text className={styles.upper} > ART</Text>
-    </Link>
-    <Box  display="flex" alignItems="center" p="1px">
-        <Input size='xs' placeholder="Search" mr="5px" type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
-        <i style={{color:"white"}} onClick={handleClick} class="fa-solid fa-magnifying-glass"></i>
-    </Box>
  
     
-</Box>
+
 
 
 </Flex>

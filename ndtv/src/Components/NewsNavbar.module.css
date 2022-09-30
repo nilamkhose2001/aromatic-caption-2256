@@ -40,7 +40,6 @@ Link+Link>Text{
 .outerFlex{
     background-color:#3E3E3E;
     /* position: sticky; */
-    margin-bottom: 2%;
    
 }
 .image{
@@ -66,6 +65,7 @@ Link+Link>Text{
    .image{
     width:70%;
    }
+  
 }
 .menu{
     display: none;
@@ -92,6 +92,7 @@ Link+Link>Text{
    
     margin-bottom: 0px;
    }
+   
 }
 
 i{
