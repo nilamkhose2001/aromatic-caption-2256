@@ -31,7 +31,7 @@ export default function India()
             </Text>
         </Box>
     <div className={styles.img} pb="0px" boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px">
-        <Image height="50%" width="100%" borderRadius="5px 5px 0px 0px" src={news.urlToImage} alt={news.title} />
+        <Image height="70%" width="100%" borderRadius="5px 5px 0px 0px" src={news.urlToImage} alt={news.title} />
                     
                     <Heading as='h5' size='sm'>{news.title}</Heading>
                     <Text fontSize='xs'>{news.description}</Text>
