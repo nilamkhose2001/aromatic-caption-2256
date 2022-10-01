@@ -26,7 +26,7 @@ export default function Footer({handleChange})
     </Flex>
     <Flex w="65%" bg="white" ml="10%" mt="4%" p="1%" className={styles.icon} >
     <Input p="9%" border="none" bg="white" size='xs' placeholder="Search"  type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
-        <i onClick={handleClick} class="fa-solid fa-magnifying-glass" ></i>
+        <i style={{color:"black"}} onClick={handleClick} class="fa-solid fa-magnifying-glass" ></i>
     </Flex>
         </Box>
         

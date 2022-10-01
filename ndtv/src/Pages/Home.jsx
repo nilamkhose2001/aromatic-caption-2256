@@ -6,12 +6,13 @@ import Footer from "../Components/Footer"
 import { SimpleGrid,Box,Image, Heading ,Text, Flex} from "@chakra-ui/react"
 import { AppContext } from "../Components/AppContext"
 import { Navigate } from "react-router-dom"
+
 const getData=(q="us")=>{
     return axios(`https://masai-api.herokuapp.com/news/top-headlines?country=${q}`)
 }
 export default function Home(){
 const [loading,setLoading]=useState(false)
-const [text,setText]=useState("in")
+const [text,setText]=useState("ch")
 const [data,setData]=useState([])
 const [story,setStory]=useState([])
 const [nav,setNav]=useState(false)
@@ -38,7 +39,6 @@ const getData2=(q)=>{
 const handleClick=(el)=>
 {
     handleNews(el)
-    console.log("nilam")
     setNav(true)
    
    
@@ -49,8 +49,23 @@ if(nav)
     <Navigate to="/india" />
     </> 
 }
+
+
+
     return <>
+
+   
+
+
+
+
+
+
+
+    
      <Navbar handleChange={handleChange}/>
+
+     {/* <Image src="add.png" alt="img" /> */}
         {
             loading?"":<h2 className={styles.head}>Headlines</h2>
         }
@@ -102,7 +117,10 @@ if(nav)
             })
         }
 </Flex>}
-<Footer handleChange={handleChange} />
+{
+    loading?<Heading textAlign="center"></Heading>:<Footer handleChange={handleChange} />
+
+}
     </>
 }
 
