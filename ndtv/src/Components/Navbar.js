@@ -1,5 +1,6 @@
 import { useState } from "react"
 import {Flex,Box,Image,Text, Input,Menu,MenuItem,Button,MenuList,MenuButton} from "@chakra-ui/react"
+import { HamburgerIcon } from '@chakra-ui/icons'
 import {Link} from "react-router-dom"
 import styles  from "./Navbar.module.css"
 export default function Navbar({handleChange})
@@ -45,7 +46,7 @@ export default function Navbar({handleChange})
 <Link  to="/">
 <Text className={styles.upper} >CRICKET</Text>
     </Link>
-    <Link  to="/india">
+    <Link  to="/">
     <Text className={styles.lower}> INDIA</Text>
     </Link>
 </Box>
@@ -142,7 +143,34 @@ export default function Navbar({handleChange})
  
     
 </Box>
+<Box className={`${styles.innerBoxStyles} ${styles.res}` }>
+    <Link to="/login"  >
+    <i style={{color:"white",marginTop:"10px"}} class="fa-solid fa-user"></i>
+    <p style={{fontSize:"10px"}}>Log-In</p>
+    </Link>
+    </Box>
 
+    <Box className={styles.men}>
+    <Menu >
+  <MenuButton as={Button} w="1px" mt="30%" bg="#3E3E3E" p={0}>
+    <HamburgerIcon ml="0px" w={6} h={6} style={{color:"white"}} />
+  </MenuButton>
+  <MenuList bg="#3E3E3E" style={{color:"white"}}>
+    <MenuItem>Live Tv</MenuItem>
+    <MenuItem>Latest</MenuItem>
+    <MenuItem>India</MenuItem>
+    <MenuItem>Covid</MenuItem>
+    <MenuItem>Opinion</MenuItem>
+    <MenuItem>Video</MenuItem>
+    <MenuItem>Cities</MenuItem>
+    <MenuItem>Word</MenuItem>
+    <MenuItem>Offbeat</MenuItem>
+    <MenuItem>Trends</MenuItem>
+    <MenuItem>Photos</MenuItem>
+    <MenuItem>Health</MenuItem>
+  </MenuList>
+</Menu>
+    </Box>
 
 </Flex>
 

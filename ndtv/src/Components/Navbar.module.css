@@ -52,6 +52,9 @@ Link+Link>Text{
     width:15%;
     padding-right: 2px;
 }
+.men{
+    visibility: hidden;
+}
 @media all and (min-width:765px) and (max-width:950px){
     .res{
         display: none;
@@ -63,6 +66,9 @@ Link+Link>Text{
     width:40%;
     
    }
+   .men{
+    visibility: visible
+}
    .image{
     width:70%;
    }
@@ -81,6 +87,9 @@ Link+Link>Text{
         align-items: center;
         align-self: center;
         
+    }
+    .men{
+        visibility: visible;
     }
    .inp{
     width:40%;
