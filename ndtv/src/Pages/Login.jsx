@@ -1,6 +1,7 @@
 import Navbar from "../Components/NewsNavbar"
 import {useState} from "react"
 import axios from "axios"
+import Footer from "../Components/Footer"
 import {
     Button,
     Container,
@@ -30,7 +31,7 @@ export default function Login()
     <Navbar />
    
 
-  <Container borderRadius={5} maxW='md' mt="10%" bg="#68D391" p="4%">
+  <Container borderRadius={5} maxW='md' mt="10%" bg="#3E3E3E" p="4%">
     
   <Stack spacing={3}>
  
@@ -41,6 +42,6 @@ export default function Login()
       <Button onClick={handleClick} mt="4%">Submit</Button>
       
    </Container>
-
+    <Footer />
     </>
 }

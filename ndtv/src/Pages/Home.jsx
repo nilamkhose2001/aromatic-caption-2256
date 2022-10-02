@@ -67,7 +67,7 @@ if(nav)
 
      {/* <Image src="add.png" alt="img" /> */}
         {
-            loading?"":<h2 className={styles.head}>Headlines</h2>
+            loading?"":<h2 style={{"margin-top":"15vh"}} className={styles.head}>Headlines</h2>
         }
     { loading?<Heading textAlign="center">Loading...</Heading>:<Flex p="1%" className={styles.story} gap='2' mt="2px" backgroundColor="#EAEAEA">
         {
